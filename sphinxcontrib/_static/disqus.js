@@ -1,6 +1,10 @@
 var disqus_shortname;
 var disqus_identifier;
-var disqus_config;
+var disqus_config = function () {
+var disqus_thread = $("#disqus_thread");
+this.page.url = 'https://cloud-pa.readthedocs.org'; 
+this.page.identifier = disqus_thread.data('disqus-identifier'); 
+};
 
 (function() {{
     var disqus_thread = $("#disqus_thread");
