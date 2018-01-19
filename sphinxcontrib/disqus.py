@@ -96,6 +96,8 @@ class DisqusDirective(Directive):
         """
         disqus_shortname = self.get_shortname()
         disqus_identifier = self.get_identifier()
+        if self.state.document.settings.env.app.builder.name == 'latex':
+            return []
         return [DisqusNode(disqus_shortname, disqus_identifier)]
 
 
